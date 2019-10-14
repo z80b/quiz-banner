@@ -29,13 +29,13 @@ export default class Banner {
   }
   async render() {
     const $slide = template(slideTpl);
-    console.log(slideTpl);
+    //console.log(slideTpl);
     let html = '';
 
     for (let slide of this.params) {
       let data = await getProducts(slide.skus);
       //html += $slide(await getProducts(slide.skus));
-      console.log(data);
+      //console.log(data);
     }
     this.$sliderTrack.innerHTML = html;
   }
