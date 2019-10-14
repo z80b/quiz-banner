@@ -4,4 +4,4 @@
 </script>
 
 <h1>{title}</h1>
-<Slide title="Preved"/>
+<Slide sku1="TO048AWCTFH0" sku2="MA002EWFHCU0"/>

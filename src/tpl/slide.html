@@ -1,3 +1,13 @@
+<script>
+import { onMount } from 'svelte'; 
+
+export let sku1 = '';
+export let sku2 = '';
+
+onMount(() => {
+  console.log('Component mounted');
+});
+</script>
 <div class="lp-quiz-slide__body">
   <% for (var i in products) { %>
     <img
