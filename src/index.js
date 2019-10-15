@@ -1,14 +1,14 @@
-import Banner from '@js/banner.svelte';
+import Page from '@js/page.svelte';
 
 require('@css/index.styl');
 
-const banner = new Banner({
-  target: document.querySelector('.lp-quiz-banner'),
+const page = new Page({
+  target: document.body,
   props: {
-    title: 'Banner4'
+    title: 'Quiz banner'
   }
 });
 
-window.banner = banner;
+window.page = page;
 
-export default banner;
+export default page;
