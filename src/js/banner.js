@@ -1,8 +1,7 @@
-import axios from 'axios';
-import { template } from 'underscore';
 import { getSkus, getProducts } from '@js/api.js';
 
-const slideTpl = require('@tpl/slide.html').default;
+const bannerTpl = require('@tpl/banner.html');
+const slideTpl = require('@tpl/slide.html');
 
 export default class Banner {
   constructor(el) {
@@ -28,15 +27,7 @@ export default class Banner {
     return params;
   }
   async render() {
-    const $slide = template(slideTpl);
-    console.log(slideTpl);
-    let html = '';
-
-    for (let slide of this.params) {
-      let data = await getProducts(slide.skus);
-      //html += $slide(await getProducts(slide.skus));
-      console.log(data);
-    }
-    this.$sliderTrack.innerHTML = html;
+    const products = await getProducts('TO048AWCTFH0,MA002EWFHCU0');
+    this.$sliderTrack.innerHTML = bannerTpl({ products, slide: slideTpl });
   }
 }
