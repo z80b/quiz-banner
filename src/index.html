@@ -5,33 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Banner</title>
+  <style type="text/css">
+  html, body {
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  </style>
 </head>
 <body>
-  <div class="lp-quiz-banner">
-    <div class="lp-quiz-banner__header">
-      <div class="lp-quiz-banner__title">&nbsp;</div>
-    </div>
-    <div class="lp-quiz-banner__body">
-      <div class="lp-quiz-slider">
-        <div class="lp-quiz-slider__body">
-          <div
-            class="lp-quiz-slide"
-            data-title="Угадай, какой товар бестселлер и получи скидку 15% за каждую викторину"
-            data-skus="TO048AWCTFH0,MA002EWFHCU0"></div>
-            <div
-            class="lp-quiz-slide"
-            data-title="Угадай, где скидка больше и получи скидку 15% за каждую викторину"
-            data-skus="TO048AWCTFH0,MA002EWFHCU0"></div>
-            <div
-            class="lp-quiz-slide"
-            data-title="Угадай, какой товар дороже и получи скидку 15% за каждую викторину"
-            data-skus="TO048AWCTFH0,MA002EWFHCU0"></div>
+  <div class="bf-actions">
+    <h2 class="bf-actions__title">Один промокод для всех акций</h2>
+    <div class="bf-actions__promocode">BF_2019</div>
+    <div class="bf-actions__content">
+      <div class="bf-actions__slider bf-actions-slider">
+        <div class="bf-actions-slider__track">
+          <a
+            class="bf-actions__slide bf-actions-slide"
+            href="#"
+            data-title="на аксессуары"
+            data-image="/static/img-01.png"
+            data-start-date=""
+            data-end-date=""
+            data-discount="60">
+            <span class="bf-actions-slide__date">8-10 ноября</span>
+            <span class="bf-actions-slide__discount">60%</span>
+            <span class="bf-actions-slide__title">на аксессуары</span>
+            <img class="bf-actions-slide__image" src="/static/img-01.png"/>
+          </a>
+          <a
+            class="bf-actions__slide bf-actions-slide"
+            href="#"
+            data-title="на верхнюю одежду"
+            data-image="/static/img-02.png"
+            data-start-date=""
+            data-end-date=""
+            data-discount="40">
+            <img class="bf-actions-slide__image" src="/static/img-02.png"/>
+          </a>
+          <a
+            class="bf-actions__slide bf-actions-slide"
+            href="#"
+            data-title="на зимнюю обувь"
+            data-image="/static/img-03.png"
+            data-start-date=""
+            data-end-date=""
+            data-discount="70">
+            <img class="bf-actions-slide__image" src="/static/img-03.png"/>
+          </a>
+          <a
+            class="bf-actions__slide bf-actions-slide"
+            href="#"
+            data-title="на детскую одежду"
+            data-image="/static/img-04.png"
+            data-start-date=""
+            data-end-date=""
+            data-discount="35">
+            <img class="bf-actions-slide__image" src="/static/img-04.png"/>
+          </a>
         </div>
-        <div class="lp-quiz-slider__dots"></div>
+        <div class="bf-actions-slider__dots">
+            <div class="bf-actions-slider__dot"></div>
+            <div class="bf-actions-slider__dot"></div>
+            <div class="bf-actions-slider__dot active"></div>
+            <div class="bf-actions-slider__dot"></div>
+            <div class="bf-actions-slider__dot"></div>
+        </div>
       </div>
-    </div>
-    <div class="lp-quiz-banner__footer">
-      <div class="lp-quiz-banner__description"></div>
     </div>
   </div>
 </body>

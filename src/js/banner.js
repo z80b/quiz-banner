@@ -1,33 +1,25 @@
-import { getSkus, getProducts } from '@js/api.js';
+import { getSkus, getProducts } from '@js/api';
+import DomElement from '@js/dom-element';
+import BannerSlide from '@js/banner-slide.js';
 
 const bannerTpl = require('@tpl/banner.html');
 const slideTpl = require('@tpl/slide.html');
 
-export default class Banner {
+class Banner extends DomElement {
   constructor(el) {
-    if (typeof(el) == 'object') {
-      this.$el = el;
-    } else {
-      this.$el = document.querySelector(el);
-    }
-    this.params = this.getParams();
-    this.$title = el.querySelector('.lp-quiz-banner__title');
-    this.$slider = el.querySelector('.lp-quiz-slider');
-    this.$sliderTrack = el.querySelector('.lp-quiz-slider__body');
-    return this.render();
+    super(el);
+    this.init();
+    return this;
   }
 
-  getParams() {
-    let params = [];
-    this.$el.querySelectorAll('.lp-quiz-slide')
-      .forEach($el => params.push({
-        title: $el.dataset.title,
-        skus: getSkus($el.dataset.skus)
-      }));
-    return params;
-  }
-  async render() {
-    const products = await getProducts('TO048AWCTFH0,MA002EWFHCU0');
-    this.$sliderTrack.innerHTML = bannerTpl({ products, slide: slideTpl });
+  init() {
+    this.$slides = this.getElements('.bf-actions-slide');
+    this.slidesCount = this.$slides.length;
+    this.slides = [];
+    this.$slides.forEach(el => {
+      this.slides.push(new BannerSlide(el));
+    });
   }
 }
+
+export default Banner;

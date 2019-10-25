@@ -1,0 +1,58 @@
+.bf-actions-slider
+    &__track
+      height 260px
+      font-size 0
+      white-space nowrap
+      overflow hidden
+
+    &__dots
+      padding 20px 0
+      text-align center
+      font-size 0
+
+    &__dot
+      display inline-block
+      width: 12px;
+      height: 12px;
+      border: solid 1px #979797;
+      border-radius 50%
+      margin 0 4px
+
+      &.active
+        background-color #d8d8d8
+
+.bf-actions-slide
+  position relative
+  display inline-block
+  width 300px
+  height 240px
+  margin 0 10px
+  background-color #f93c00
+  color #fff
+  text-align left
+
+  &__date, &__title, &__discount
+    position absolute
+    left 20px
+
+  &__date, &__title  
+    font-size 22px
+    font-weight 500
+
+  &__title
+    top 130px
+
+  &__date
+    top 19px
+
+  &__discount
+    font-size 72px
+    font-weight 700
+    top 50px
+
+  &__image
+    position absolute
+    bottom -20px
+    right -10px
+    max-width 50%
+

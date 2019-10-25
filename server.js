@@ -12,6 +12,8 @@ app.use(require('webpack-dev-middleware')(compiler, {
   mode: 'development'
 }));
 
+app.use('/static', express.static(__dirname + '/public'));
+
 app.listen(3000, function(err) {
   if (err) {
     return console.error(err);
