@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Banner</title>
+  <title><%= htmlWebpackPlugin.options.title %></title>
   <style type="text/css">
   html, body {
     background-color: #000;
@@ -13,6 +13,10 @@
     font-family: Arial, Helvetica, sans-serif;
   }
   </style>
+  <script>
+    LMDA = {};
+    LMDA.platform = 'mobile';
+  </script>
 </head>
 <body>
   <div class="bf-actions">
@@ -20,58 +24,47 @@
     <div class="bf-actions__promocode">BF_2019</div>
     <div class="bf-actions__content">
       <div class="bf-actions__slider bf-actions-slider">
+        <div class="bf-actions-slider__content">
         <div class="bf-actions-slider__track">
           <a
             class="bf-actions__slide bf-actions-slide"
-            href="#"
+            data-href="#"
             data-title="на аксессуары"
             data-image="/static/img-01.png"
-            data-start-date=""
-            data-end-date=""
+            data-start-date="2019.09.01"
+            data-end-date="2019.09.08"
             data-discount="60">
-            <span class="bf-actions-slide__date">8-10 ноября</span>
-            <span class="bf-actions-slide__discount">60%</span>
-            <span class="bf-actions-slide__title">на аксессуары</span>
-            <img class="bf-actions-slide__image" src="/static/img-01.png"/>
           </a>
           <a
             class="bf-actions__slide bf-actions-slide"
-            href="#"
+            data-href="#"
             data-title="на верхнюю одежду"
             data-image="/static/img-02.png"
-            data-start-date=""
-            data-end-date=""
+            data-start-date="2019.09.08"
+            data-end-date="2019.10.10"
             data-discount="40">
-            <img class="bf-actions-slide__image" src="/static/img-02.png"/>
           </a>
           <a
             class="bf-actions__slide bf-actions-slide"
-            href="#"
+            data-href="#"
             data-title="на зимнюю обувь"
             data-image="/static/img-03.png"
-            data-start-date=""
-            data-end-date=""
+            data-start-date="2019.10.10"
+            data-end-date="2019.10.28"
             data-discount="70">
-            <img class="bf-actions-slide__image" src="/static/img-03.png"/>
           </a>
           <a
             class="bf-actions__slide bf-actions-slide"
-            href="#"
+            data-href="#"
             data-title="на детскую одежду"
             data-image="/static/img-04.png"
-            data-start-date=""
-            data-end-date=""
+            data-start-date="2019.10.28"
+            data-end-date="2019.10.30"
             data-discount="35">
-            <img class="bf-actions-slide__image" src="/static/img-04.png"/>
           </a>
         </div>
-        <div class="bf-actions-slider__dots">
-            <div class="bf-actions-slider__dot"></div>
-            <div class="bf-actions-slider__dot"></div>
-            <div class="bf-actions-slider__dot active"></div>
-            <div class="bf-actions-slider__dot"></div>
-            <div class="bf-actions-slider__dot"></div>
         </div>
+        <div class="bf-actions-slider__dots"></div>
       </div>
     </div>
   </div>

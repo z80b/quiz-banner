@@ -2,10 +2,15 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const autoprefixer = require('autoprefixer-stylus');
 const path = require('path');
 
 module.exports = {
+  mode: process.env.NODE_ENV,
+  node: false,
+
   entry: __dirname + "/src/index.js",  // webpack entry point. Module to start building dependency graph
+ 
   output: {
     path: __dirname + "/dist/", // Folder to store generated bundle
     filename: "bundle.js", // Name of generated bundle after build
@@ -38,8 +43,9 @@ module.exports = {
             presets: [
               [
                 "@babel/preset-env", {
-                  "modules": false,
-                  "useBuiltIns": "usage"
+                  targets: "> 0.25%, not dead",
+                  useBuiltIns: 'usage',
+                  modules: false
                }
               ]
             ],
@@ -61,7 +67,17 @@ module.exports = {
             },
           },
           'css-loader',
-          'stylus-loader'
+          {
+            loader: 'stylus-loader',
+            options: {
+              use: [autoprefixer({
+                overrideBrowserslist: [
+                  'last 2 version',
+                  '> 1%',
+                ]                
+              })]
+            }
+          }
         ],
       },
       {
@@ -81,7 +97,6 @@ module.exports = {
     ]
   },
   plugins: [
-    
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // all options are optional

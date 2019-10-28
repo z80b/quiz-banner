@@ -2,31 +2,37 @@
 
 .bf-actions
   display block
-  font-size 13px
+  font-size 10px
   font-weight 500
   color #fff
   text-align center
 
   &__conditions
-    font-size 10px
+    font-size 1em
     font-weight 500
     color #808080
 
   &__title
-    font-size 36px
+    font-size 3.6em
     font-weight 500
+    margin 1em 0 .2em
 
   &__promocode
-    font-size 36px
+    font-size 3.6em
     font-weight 700
 
   &__content
-    max-width 1020px
+    max-width 960px
     margin 0 auto
 
   &__slider
-    height 260px
-    font-size 0
     white-space nowrap
 
+@media (max-width: 640px)
+  .bf-actions
 
+    &__title
+      font-size 1.8em
+
+    &__promocode
+      font-size 2.4em
